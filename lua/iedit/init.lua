@@ -23,34 +23,6 @@ local hi_id = ''
 local Operator = ''
 local iedit_cursor_hi_info = {}
 local cursor_stack = {}
-
-local iedit_hi_info = {
-  {
-    name = 'IeditPurpleBold',
-    guibg = '#3c3836',
-    guifg = '#d3869b',
-    ctermbg = '',
-    ctermfg = 175,
-    bold = 1,
-  },
-  {
-    name = 'IeditBlueBold',
-    guibg = '#3c3836',
-    guifg = '#83a598',
-    ctermbg = '',
-    ctermfg = 109,
-    bold = 1,
-  },
-  {
-    name = 'IeditInactive',
-    guibg = '#3c3836',
-    guifg = '#abb2bf',
-    ctermbg = '',
-    ctermfg = 145,
-    bold = 1,
-  },
-}
-
 -- }}}
 
 --- basic functions{{{
@@ -174,7 +146,7 @@ local function highlight_cursor() -- {{{
   for _, i in ipairs(vim.fn.range(1, #cursor_stack)) do
     if cursor_stack[i].active then
       if i == index then
-        vim.fn.matchaddpos('IeditPurpleBold', {
+        vim.fn.matchaddpos('Ieditcurrent', {
           {
             cursor_stack[i].lnum,
             cursor_stack[i].col,
@@ -182,7 +154,7 @@ local function highlight_cursor() -- {{{
           },
         })
       else
-        vim.fn.matchaddpos('IeditBlueBold', {
+        vim.fn.matchaddpos('Ieditactive', {
           {
             cursor_stack[i].lnum,
             cursor_stack[i].col,
@@ -200,7 +172,7 @@ local function highlight_cursor() -- {{{
         99999
       )
     else
-      vim.fn.matchaddpos('IeditInactive', {
+      vim.fn.matchaddpos('Ieditinactive', {
         {
           cursor_stack[i].lnum,
           cursor_stack[i].col,
@@ -646,9 +618,11 @@ function M.start(...) -- {{{
   end
   local save_cl = vim.wo.cursorline
   vim.wo.cursorline = false
-  util.hi(iedit_hi_info[1])
-  util.hi(iedit_hi_info[2])
-  util.hi(iedit_hi_info[3])
+  local config = require('iedit.config')
+  for k, v in pairs(config.get().highlight) do
+      v.name = 'Iedit' .. k
+      util.hi(v)
+  end
   local cursor_hi = util.group2dict('Cursor')
   iedit_cursor_hi_info = vim.fn.deepcopy(cursor_hi)
   iedit_cursor_hi_info.name = 'SpaceVimGuideCursor'
@@ -722,5 +696,9 @@ function M.start(...) -- {{{
   return symbol
 end
 -- }}}
+
+function M.setup(opt)
+    require('iedit.config').setup(opt)
+end
 
 return M
