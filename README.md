@@ -15,7 +15,7 @@
 
 ## Installation
 
-with [nvim-plug](https://github.com/wsdjeg/nvim-plug)
+Using [nvim-plug](https://github.com/wsdjeg/nvim-plug)
 
 ```lua
 require('plug').add({
@@ -27,6 +27,12 @@ require('plug').add({
 ```
 
 Then use `:PlugInstall iedit.nvim` to install this plugin.
+
+Using [luarocks](https://luarocks.org/)
+
+```
+luarocks install iedit.nvim
+```
 
 ## Configuration
 
