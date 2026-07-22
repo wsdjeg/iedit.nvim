@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.1](https://github.com/wsdjeg/iedit.nvim/compare/v1.1.0...v1.1.1) (2026-07-22)
+
+
+### Documentation
+
+* update README to match picker.nvim style ([c41fea9](https://github.com/wsdjeg/iedit.nvim/commit/c41fea92686f35a7af0b4cc41d0d5dfcd70a4b20))
+
+
+### Tests
+
+* add comprehensive test coverage for all modules ([13dbcb1](https://github.com/wsdjeg/iedit.nvim/commit/13dbcb12089ac3e193d046a3a07b210fd87a5078))
+
 ## [1.1.0](https://github.com/wsdjeg/iedit.nvim/compare/v1.0.0...v1.1.0) (2025-11-23)
 
 
