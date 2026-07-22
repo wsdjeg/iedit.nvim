@@ -2,6 +2,13 @@
 
 **iedit.nvim** is a Neovim plugin inspired from Emacs's iedit mode.
 
+[![Run Tests](https://github.com/wsdjeg/iedit.nvim/actions/workflows/test.yml/badge.svg)](https://github.com/wsdjeg/iedit.nvim/actions/workflows/test.yml)
+[![GitHub License](https://img.shields.io/github/license/wsdjeg/iedit.nvim)](LICENSE)
+[![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/wsdjeg/iedit.nvim)](https://github.com/wsdjeg/iedit.nvim/issues)
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/wsdjeg/iedit.nvim)](https://github.com/wsdjeg/iedit.nvim/commits/master/)
+[![GitHub Release](https://img.shields.io/github/v/release/wsdjeg/iedit.nvim)](https://github.com/wsdjeg/iedit.nvim/releases)
+[![luarocks](https://img.shields.io/luarocks/v/wsdjeg/iedit.nvim)](https://luarocks.org/modules/wsdjeg/iedit.nvim)
+
 <!-- vim-markdown-toc GFM -->
 
 - [Installation](#installation)
@@ -144,3 +151,4 @@ Love this plugin? Follow [me](https://wsdjeg.net/) on
 ## Feedback
 
 If you encounter any bugs or have suggestions, please file an issue in the [issue tracker](https://github.com/wsdjeg/iedit.nvim/issues)
+
